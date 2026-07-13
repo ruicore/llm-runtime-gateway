@@ -17,19 +17,25 @@ contracts rather than provider SDK details.
 
 The control plane will eventually hold configuration and policy decisions such as
 provider selection, timeout budgets, fallback behavior, prompt versions, and runtime
-limits.
+limits. It should also hold task-specific context acquisition policies, including
+starting context, tool scope, expansion budgets, and stopping conditions. See
+[Context Acquisition Policy](context-acquisition-policy.md).
 
 ### Runtime Plane
 
 The runtime plane will execute model interactions through provider adapters. It will
 own request normalization, response normalization, streaming lifecycle management,
-and deterministic fake-provider behavior for tests.
+and deterministic fake-provider behavior for tests. When tool execution is introduced,
+it will also enforce context and tool budgets, normalize tool results, suppress
+duplicate context, and record stop reasons.
 
 ### Observability / Evaluation Plane
 
 This plane will eventually record runs, usage, costs, errors, prompts, outputs, and
-evaluation-ready exports. The goal is to make every model interaction observable and
-testable without turning business code into logging or evaluation glue.
+evaluation-ready exports. Tool calls, retained result size, context growth, expansion
+depth, and stop reasons should be recorded as part of the run. The goal is to make
+every model interaction observable and testable without turning business code into
+logging or evaluation glue.
 
 ## Current Implementation
 

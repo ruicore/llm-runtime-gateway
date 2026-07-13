@@ -63,6 +63,13 @@ uv run mypy src
 
 See [docs/roadmap.md](docs/roadmap.md).
 
+## Design Docs
+
+- [Architecture](docs/architecture.md)
+- [Context Acquisition Policy](docs/context-acquisition-policy.md)
+- [Failure Modes](docs/failure-modes.md)
+- [Provider Contract](docs/provider-contract.md)
+
 ## Non-Goals
 
 - Not a LangChain clone

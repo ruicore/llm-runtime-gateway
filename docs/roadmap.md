@@ -46,6 +46,7 @@ Planned deliverables:
 - run identity model
 - lifecycle states
 - in-memory or test-first ledger shape
+- fields for task mode, context budget, tool-call events, and stop reason
 
 Should not include yet:
 
@@ -63,6 +64,7 @@ Planned deliverables:
 - retry policy
 - fallback policy shape
 - failure classification tests
+- context acquisition and tool budget policy shape
 
 Should not include yet:
 
@@ -127,6 +129,7 @@ Planned deliverables:
 - evaluation-ready run export shape
 - deterministic fake-provider fixtures
 - basic regression evaluation workflow
+- tool traces and context-growth metrics when tool execution is available
 
 Should not include yet:
 
@@ -141,6 +144,8 @@ Goal: explore tool and MCP boundaries if they become useful.
 Planned deliverables:
 
 - documented boundary between runtime calls and tool execution
+- task-specific context acquisition policy at the tool boundary
+- bounded, structured tool-result contract
 - optional integration experiments
 
 Should not include yet:
